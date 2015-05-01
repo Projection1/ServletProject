@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/authentication">
+<form action="UserController1">
 <tr>
 <td>
 <label>Username</label>
