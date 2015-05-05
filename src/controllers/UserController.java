@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,7 +45,7 @@ public class UserController extends HttpServlet {
 	 */
 	public void init(ServletConfig servletconfig) {
 		System.out.println("hello");
-		try {
+		/*try {
 			Context initContext = new InitialContext();
 			Context envContext = (Context) initContext.lookup("java:/comp/env");
 			datasource = (DataSource) envContext.lookup("jdbc/project");
@@ -53,13 +54,14 @@ public class UserController extends HttpServlet {
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
+		
 
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String username = request.getParameter("username");
+	/*	String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
 		String sql = "select * from User where username=? AND password=?";
@@ -83,7 +85,14 @@ public class UserController extends HttpServlet {
 				connection.close();
 			} catch (Exception e) {
 			}
-		}
+		}*/
+		 response.setContentType("text/html");  
+	        PrintWriter out = response.getWriter();  
+	         
+	        RequestDispatcher rd=request.getRequestDispatcher("admin.jsp");
+	        rd.forward(request, response);
+	        out.print("welcome ADMIN");
+	        out.close(); 
 
 	}
 

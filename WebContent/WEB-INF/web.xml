@@ -12,6 +12,14 @@
     <servlet-name>Authentication</servlet-name>
     <url-pattern>/UserController1</url-pattern>
   </servlet-mapping>
+  <filter>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>controllers.MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/UserController1</url-pattern>
+  </filter-mapping>
   <resource-ref>
     <description>Primary database</description>
     <res-ref-name>jdbc/project</res-ref-name>
