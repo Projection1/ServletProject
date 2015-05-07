@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="UserController1">
+<form action="LoginServlet">
 <tr>
 <td>
 <label>Username</label>
